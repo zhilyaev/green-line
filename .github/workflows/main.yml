@@ -1,4 +1,4 @@
-name: Make commit!
+name: Automate it!
 
 on:
   schedule:
@@ -12,8 +12,11 @@ jobs:
       run: git status
     - name: Action
       run: echo "What is the price of gold?" >> CHANGELOG
-    - name: Commit & push
-      run: git add . && git commit -m "Hmm..."
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "WIP: hmm..." -a
     - uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.REPO_TOKEN }}
