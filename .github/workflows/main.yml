@@ -2,7 +2,7 @@ name: Make commit!
 
 on:
   schedule:
-    - cron: '3 * * * *' # Every day at 16:30
+    - cron: '*/2 * * * *' # Every day at 16:30
 jobs:
   build:
     runs-on: ubuntu-latest
