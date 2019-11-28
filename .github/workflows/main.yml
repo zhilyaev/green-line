@@ -2,7 +2,7 @@ name: Make commit!
 
 on:
   schedule:
-    - cron: '5 * * * *' # Every day at 16:30
+    - cron: '3 * * * *' # Every day at 16:30
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,9 +13,8 @@ jobs:
     - name: Action
       run: echo "What is the price of gold?" >> CHANGELOG
     - name: Commit & push
-      run: git add . && git commit -m "Hmm..." && git push origin master
+      run: git add . && git commit -m "Hmm..."
+    - uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.REPO_TOKEN }}
       
-#     - name: Run a multi-line script
-#       run: |
-#         echo Add other actions to build,
-#         echo test, and deploy your project.
