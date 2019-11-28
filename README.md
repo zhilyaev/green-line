@@ -1,2 +1,2 @@
 # green-line
-– Do you need work hard? – No! 
+– Do you need to work hard? – No! 
