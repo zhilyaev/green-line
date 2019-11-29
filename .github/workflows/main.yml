@@ -11,7 +11,7 @@ jobs:
     - name: Git status
       run: git status
     - name: Action
-      run: echo "What is the price of gold?" >> CHANGELOG
+      run: echo $(date) >> CHANGELOG
     - name: Commit files
       run: |
         git config --local user.email "zhilyaev.dmitriy@gmail.com"
